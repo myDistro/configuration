@@ -49,7 +49,7 @@
 #
 # Copyright 2014 Ingolf Wagner.
 #
-class configuration (
+definie configuration (
   $target ,
   $source ,
   $user ,
@@ -64,7 +64,7 @@ class configuration (
         source => "git@github.com:${source}.git",
         user  => $user,
         revision => $branch,
-        require  => [User[$user],Package['git']]
+        require  => User[$user]
       }
     }
     github_https:  {
@@ -74,7 +74,7 @@ class configuration (
         source => "https://github.com/${source}.git",
         user  => $user,
         revision => $branch,
-        require  => [User[$user],Package['git']]
+        require  => User[$user]
       }
     }
     default: {   }

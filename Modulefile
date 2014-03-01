@@ -8,5 +8,4 @@ description 'comming soon'
 project_page 'https://github.com/myDistro/configuration'
 
 ## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
-'puppetlabs/vcsrepo', '>= 0.2.0'
+dependency 'puppetlabs/vcsrepo', '>= 0.2.0'

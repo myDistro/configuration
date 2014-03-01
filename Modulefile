@@ -1,5 +1,5 @@
 name    'myDistro-configuration'
-version '0.1.0'
+version '0.1.1'
 source 'https://github.com/myDistro/configuration'
 author 'myDistro'
 license 'GPL v3'

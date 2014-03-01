@@ -49,7 +49,7 @@
 #
 # Copyright 2014 Ingolf Wagner.
 #
-definie configuration (
+define configuration (
   $target ,
   $source ,
   $user ,

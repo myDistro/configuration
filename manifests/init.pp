@@ -49,7 +49,7 @@
 #
 # Copyright 2014 Ingolf Wagner.
 #
-class configuration {
+class configuration (
   $target ,
   $source ,
   $user ,

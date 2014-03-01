@@ -1,14 +1,26 @@
 # == Class: configuration
 #
-# Full description of class configuration here.
+# You can use a gitrepository for your .dot file configurations.
+# This module lets you download it and extractit.
+# You have to put a setup.sh file in the root of your directory.
+# This the setup.sh will be replaced someday by the puppet linking process.
 #
 # === Parameters
 #
-# Document parameters here.
+# [*target*]
+#   target of the configuration repo 
+# 
+# [*source*]
+#   git repository
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# [*user*]
+#   user at the repository
+#
+# [*vendor*]
+#   github or github_https 
+#
+# [*branch*]
+#   which branch of the repo to use
 #
 # === Variables
 #
@@ -23,24 +35,25 @@
 #
 # === Examples
 #
-#  class { configuration:
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+#  configuration { 'myVimConfig':
+#    target => '/home/vanDalo/.vim',
+#    source => 'mrVanDalo/spread-vim',
+#    user => 'vanDalo',
 #  }
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Ingolf Wagner <palipalo9@googlemail.com>
 #
 # === Copyright
 #
-# Copyright 2014 Your name here, unless otherwise noted.
+# Copyright 2014 Ingolf Wagner.
 #
 class configuration {
   $target ,
   $source ,
   $user ,
   $vendor = 'github_https',
-  $group = 'opp',
   $branch = 'master',
 ){
   case $vendor {

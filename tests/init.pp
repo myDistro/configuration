@@ -9,5 +9,10 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-include configuration
+
+configuration { "palo-vim":
+    target => '/home/palo/.vim',
+    source => 'mrVanDalo/configure-vim',
+    user   => 'palo',
+}
 

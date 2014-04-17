@@ -17,7 +17,7 @@
 #   user at the repository
 #
 # [*vendor*]
-#   github or github_https 
+#   github or github_https (default)
 #
 # [*branch*]
 #   which branch of the repo to use

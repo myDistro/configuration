@@ -26,7 +26,7 @@ end
 
 task :test => ['build'] do 
     # install stuff in an area for testing (including dependencies)
-    sh "puppet module install pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz --modulepath=#{test_path}"
+    sh "puppet module install -f pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz --modulepath=#{test_path}"
     # run tests with that area as module area
     sh "puppet apply --noop tests/init.pp --modulepath=#{test_path}"
 end

@@ -42,7 +42,7 @@
 define configuration (
   $target ,
   $source ,
-  $user ,
+  $user   = undef,
   $vendor = 'github_https',
   $branch = 'master',
 ){
@@ -54,7 +54,6 @@ define configuration (
         source => "git@github.com:${source}.git",
         user  => $user,
         revision => $branch,
-        require  => User[$user]
       }
     }
     github_https:  {
@@ -64,11 +63,11 @@ define configuration (
         source => "https://github.com/${source}.git",
         user  => $user,
         revision => $branch,
-        require  => User[$user]
       }
     }
     default: {   }
   }
+  if ( $user ){ 
   exec{ "/bin/bash ${target}/setup.sh":
     user  => $user,
     require  => 
@@ -76,5 +75,11 @@ define configuration (
       Vcsrepo[$target],
       User[$user],
     ]
+  }
+  } else {
+    exec{ "/bin/bash ${target}/setup.sh":
+        user  => $user,
+        require  => Vcsrepo[$target]
+  }
   }
 }

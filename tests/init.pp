@@ -11,8 +11,7 @@
 #
 
 configuration { "palo-vim":
-    target => '/home/palo/.vim',
+    target => '/tmp/puppet_test/.vim',
     source => 'mrVanDalo/configure-vim',
-    user   => 'palo',
 }
 

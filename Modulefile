@@ -1,10 +1,10 @@
 name    'myDistro-configuration'
-version '0.1.3'
+version '0.2.0'
 source 'https://github.com/myDistro/configuration'
 author 'myDistro'
 license 'GPL v3'
-summary 'configure you computer with git repositories'
-description 'comming soon'
+summary 'use github to manage your dotfile '
+description 'a module to manage your dotfile using github.'
 project_page 'http://mydistro.github.io/'
 
 ## Add dependencies, if any:

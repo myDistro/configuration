@@ -10,8 +10,25 @@
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
 
-configuration { "palo-vim":
-    target => '/tmp/puppet_test/.vim',
+configuration { "test-links":
+    target => '/test-links',
+    source => 'mrVanDalo/configure-vim',
+    links => {  
+      a => { source => 'vimrc',
+             target => "/tmp/puppet_test/.vimrc" },
+      b => { source => "whatever" ,
+             target => "/tmp/something" },
+             } 
+}
+
+configuration { "test-init":
+    target => '/test-init',
+    source => 'mrVanDalo/configure-vim',
+    init => 'setup.sh',
+}
+
+configuration { "test-minimal":
+    target => '/test-minimal',
     source => 'mrVanDalo/configure-vim',
 }
 

@@ -23,10 +23,21 @@ task :build do
     sh "puppet module build"
 end
 
+def install_package(path = nil )
+    if path  
+        sh "puppet module install -f pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz --modulepath=#{path}"
+    else
+        sh "puppet module install -f pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz" 
+    end
+end
+
+task :install => ['build'] do
+    install_package
+end
 
 task :test => ['build'] do 
     # install stuff in an area for testing (including dependencies)
-    sh "puppet module install -f pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz --modulepath=#{test_path}"
+    install_package(test_path)
     # run tests with that area as module area
     sh "puppet apply --noop tests/init.pp --modulepath=#{test_path}"
 end

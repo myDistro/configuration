@@ -9,5 +9,38 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-include configuration
 
+configuration { "test-links":
+    target => '/test-links',
+    source => 'mrVanDalo/configure-vim',
+    links => {  
+      a => { source => 'vimrc',
+             target => "/tmp/puppet_test/.vimrc" },
+      b => { source => "whatever" ,
+             target => "/tmp/something" },
+             } 
+}
+
+configuration { "test-init":
+    target => '/test-init',
+    source => 'mrVanDalo/configure-vim',
+    init => 'setup.sh',
+}
+
+configuration { "test-minimal":
+    target => '/test-minimal',
+    source => 'mrVanDalo/configure-vim',
+}
+
+# source names are the same
+# name of the link values are the same
+configuration { "test-links-double":
+    target => '/test-links2',
+    source => 'mrVanDalo/configure-vim',
+    links => {  
+      a => { source => 'vimrc',
+             target => "/tmp/puppet_test2/.vimrc" },
+      b => { source => "whatever" ,
+             target => "/tmp/something2" },
+             } 
+}

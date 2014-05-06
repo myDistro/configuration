@@ -32,3 +32,15 @@ configuration { "test-minimal":
     source => 'mrVanDalo/configure-vim',
 }
 
+# source names are the same
+# name of the link values are the same
+configuration { "test-links-double":
+    target => '/test-links2',
+    source => 'mrVanDalo/configure-vim',
+    links => {  
+      a => { source => 'vimrc',
+             target => "/tmp/puppet_test2/.vimrc" },
+      b => { source => "whatever" ,
+             target => "/tmp/something2" },
+             } 
+}

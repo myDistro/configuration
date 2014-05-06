@@ -1,14 +1,14 @@
 /* creates link for the main script. */
 define configuration::create_link(
-  $source, 
   $target,
+  $source, 
   $path_to_config,
   $owner,
 ){
   #notify { "ln -s ${path_to_config}/${source} ${target}": }
-  file { "${path_to_config}/${source}":
+  file { $target:
     ensure  => "link",
-    target  => $target,
+    target  => "${path_to_config}/${source}",
     owner   => $owner,
     require => Vcsrepo[$path_to_config],
   }

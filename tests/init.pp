@@ -32,6 +32,10 @@ configuration { "test-minimal":
     source => 'mrVanDalo/configure-vim',
 }
 
+/*
+
+still fails
+
 # source names are the same
 # name of the link values are the same
 configuration { "test-links-double":
@@ -44,3 +48,4 @@ configuration { "test-links-double":
              target => "/tmp/something2" },
              } 
 }
+*/

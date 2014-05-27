@@ -77,43 +77,43 @@ define configuration (
   $links  = undef,
 ){
   case $vendor {
-    host: {
+    'host': {
       vcsrepo { $target:
-        ensure => present,
+        ensure   => present,
         provider => git,
-        source => $source,
-        user  => $user,
+        source   => $source,
+        user     => $user,
         revision => $branch,
       }
     }
-    github:  {
+    'github':  {
       vcsrepo { $target:
-        ensure => present,
+        ensure   => present,
         provider => git,
-        source => "git@github.com:${source}.git",
-        user  => $user,
+        source   => "git@github.com:${source}.git",
+        user     => $user,
         revision => $branch,
       }
     }
-    github_https:  {
+    'github_https':  {
       vcsrepo { $target:
-        ensure => present,
+        ensure   => present,
         provider => git,
-        source => "https://github.com/${source}.git",
-        user  => $user,
+        source   => "https://github.com/${source}.git",
+        user     => $user,
         revision => $branch,
       }
     }
-    bitbucket: {
+    'bitbucket': {
       vcsrepo { $target:
-        ensure => present,
+        ensure   => present,
         provider => git,
-        source => "git@bitbucket.org:${source}.git",
-        user  => $user,
+        source   => "git@bitbucket.org:${source}.git",
+        user     => $user,
         revision => $branch,
       }
     }
-    default: {   }
+    default: {  }
   }
 
   if ( $init ) {

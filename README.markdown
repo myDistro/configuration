@@ -115,8 +115,8 @@ Migration is quite simple, just add the init parameter to your configuration.
 
 ## Support
 
-* [Puppet Forge](https://forge.puppetlabs.com/myDistro/paranoid)
-* [Github](http://github.com/myDistro/paranoid/issues)
+* [Puppet Forge](https://forge.puppetlabs.com/myDistro/configuration)
+* [Github](http://github.com/myDistro/configuration)
 * IRC : irc.freenode.net #myDistro
 
 

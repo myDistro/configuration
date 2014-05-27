@@ -20,6 +20,7 @@ user at the repository
 
 [*vendor*]
 github or github_https (default)
+or bitbucket or host
 
 [*branch*]
 which branch of the repo to use
@@ -76,6 +77,15 @@ define configuration (
   $links  = undef,
 ){
   case $vendor {
+    host: {
+      vcsrepo { $target:
+        ensure => present,
+        provider => git,
+        source => $source,
+        user  => $user,
+        revision => $branch,
+      }
+    }
     github:  {
       vcsrepo { $target:
         ensure => present,
@@ -90,6 +100,15 @@ define configuration (
         ensure => present,
         provider => git,
         source => "https://github.com/${source}.git",
+        user  => $user,
+        revision => $branch,
+      }
+    }
+    bitbucket: {
+      vcsrepo { $target:
+        ensure => present,
+        provider => git,
+        source => "git@bitbucket.org:${source}.git",
         user  => $user,
         revision => $branch,
       }

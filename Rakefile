@@ -25,7 +25,7 @@ end
 
 def install_package(path = nil )
     if path  
-        sh "puppet module install -f pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz --modulepath=#{path}"
+        sh "puppet module install pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz --modulepath=#{path}"
     else
         sh "puppet module install -f pkg/#{module_extract("name")}-#{module_extract("version")}.tar.gz" 
     end

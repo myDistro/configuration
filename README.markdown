@@ -115,8 +115,8 @@ Migration is quite simple, just add the init parameter to your configuration.
 
 ## Support
 
+* [myDistro](http://myDistro.github.io)
 * [Puppet Forge](https://forge.puppetlabs.com/myDistro/configuration)
 * [Github](http://github.com/myDistro/configuration)
 * IRC : irc.freenode.net #myDistro
-
 

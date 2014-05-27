@@ -1,0 +1,28 @@
+{
+  "operatingsystem_support": [
+    { "operatingsystem": "Debian",
+      "operatingsystemrelease": [ "6", "7" ]
+    },
+    { "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "10.04", "12.04", "14.04" ]
+    }
+  ],
+  "requirements": [
+    {
+      "name":                "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "name": "myDistro-configuration",
+  "version": "0.2.4",
+  "author": "myDistro",
+  "summary": "use github to manage your dotfile ",
+  "license": "GPL v3",
+  "source": "https://github.com/myDistro/configuration",
+  "project_page": "http://mydistro.github.io/",
+  "issues_url": "https://github.com/myDistro/configuration/issues",
+  "description": "a module to manage your dotfile using gitserver.",
+  "dependencies": [
+    {"name":"puppetlabs/vcsrepo","version_requirement":">= 0.2.0"}
+  ]
+}

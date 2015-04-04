@@ -125,15 +125,15 @@ define configuration (
   }
 
   if ( $init ) {
-    # execute init script
+  # execute init script
     exec{ "/bin/bash ${target}/${init}":
       user    => $user,
       require => Vcsrepo[$target],
-      }
+    }
   }
 
   if ( $links ) {
-    # link the links
+  # link the links
     create_resources(
       configuration::create_link,
       $links,

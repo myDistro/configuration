@@ -1,7 +1,7 @@
 # creates link for the main script.
 define configuration::create_link(
   $target,
-  $source, 
+  $source,
   $path_to_config,
   $owner,
 ){

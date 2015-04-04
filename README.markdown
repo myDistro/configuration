@@ -102,6 +102,11 @@ Unless you use host as _vendor_, _source_ should be 'user/repository' (without .
 * bitbucket : use ssh bitbucket
 * host : use your own server. _source_ must be the full path for 'git clone'
 
+#### ensure
+
+You have like in `vcsrepo` the possibility to set the ensure parameter to `latest` to ensure you always update
+your repositories when calling puppet.
+
 
 ## Migrate 0.1.x to 0.2.x
 

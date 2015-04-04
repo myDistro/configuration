@@ -14,15 +14,15 @@
     }
   ],
   "name": "myDistro-configuration",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "myDistro",
   "summary": "use github to manage your dotfile ",
-  "license": "GPL v3",
+  "license": "GPL-3.0",
   "source": "https://github.com/myDistro/configuration",
   "project_page": "http://mydistro.github.io/",
   "issues_url": "https://github.com/myDistro/configuration/issues",
   "description": "a module to manage your dotfile using gitserver.",
   "dependencies": [
-    {"name":"puppetlabs/vcsrepo","version_requirement":">= 0.2.0"}
+    {"name":"puppetlabs/vcsrepo","version_requirement":">= 0.2.0 < 2.0.0"}
   ]
 }

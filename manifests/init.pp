@@ -32,6 +32,9 @@ to create links out in the system
 [*init*]
 calles a script (inside the repository) (old version of linking)
 
+[*ensure*]
+the famouse ensure parameter, can be set (like in vcsreop) to latest to ensure you always have the newest version
+of you dot file
 
 === Examples
 
@@ -39,6 +42,13 @@ configuration { 'myVimConfig':
   target => '/home/vanDalo/.vim',
   source => 'mrVanDalo/spread-vim',
   user => 'vanDalo',
+}
+
+configuration { 'myVimConfig-upate-to-date':
+  target => '/home/vanDalo/.vim',
+  source => 'mrVanDalo/spread-vim',
+  user => 'vanDalo',
+  ensure => latest,
 }
 
 configuration { 'myVimConfig':
@@ -75,11 +85,12 @@ define configuration (
   $branch = 'master',
   $init   = undef,
   $links  = undef,
+  $ensure = present,
 ){
   case $vendor {
     'host': {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => $source,
         user     => $user,
@@ -88,7 +99,7 @@ define configuration (
     }
     'github':  {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => "git@github.com:${source}.git",
         user     => $user,
@@ -97,7 +108,7 @@ define configuration (
     }
     'github_https':  {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => "https://github.com/${source}.git",
         user     => $user,
@@ -106,7 +117,7 @@ define configuration (
     }
     'bitbucket': {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => "git@bitbucket.org:${source}.git",
         user     => $user,

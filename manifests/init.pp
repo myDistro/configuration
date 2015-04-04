@@ -32,6 +32,9 @@ to create links out in the system
 [*init*]
 calles a script (inside the repository) (old version of linking)
 
+[*ensure*]
+the famouse ensure parameter, can be set (like in vcsreop) to latest to ensure you always have the newest version
+of you dot file
 
 === Examples
 
@@ -39,6 +42,13 @@ configuration { 'myVimConfig':
   target => '/home/vanDalo/.vim',
   source => 'mrVanDalo/spread-vim',
   user => 'vanDalo',
+}
+
+configuration { 'myVimConfig-upate-to-date':
+  target => '/home/vanDalo/.vim',
+  source => 'mrVanDalo/spread-vim',
+  user => 'vanDalo',
+  ensure => latest,
 }
 
 configuration { 'myVimConfig':

@@ -75,11 +75,12 @@ define configuration (
   $branch = 'master',
   $init   = undef,
   $links  = undef,
+  $ensure = present,
 ){
   case $vendor {
     'host': {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => $source,
         user     => $user,
@@ -88,7 +89,7 @@ define configuration (
     }
     'github':  {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => "git@github.com:${source}.git",
         user     => $user,
@@ -97,7 +98,7 @@ define configuration (
     }
     'github_https':  {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => "https://github.com/${source}.git",
         user     => $user,
@@ -106,7 +107,7 @@ define configuration (
     }
     'bitbucket': {
       vcsrepo { $target:
-        ensure   => present,
+        ensure   => $ensure,
         provider => git,
         source   => "git@bitbucket.org:${source}.git",
         user     => $user,

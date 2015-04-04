@@ -32,6 +32,12 @@ configuration { "test-minimal":
     source => 'mrVanDalo/configure-vim',
 }
 
+configuration { "test-minimal-latest":
+  target => '/test-minimal-latest',
+  source => 'mrVanDalo/configure-vim',
+  ensure => latest,
+}
+
 /*
 
 still fails

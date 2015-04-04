@@ -14,7 +14,7 @@
     }
   ],
   "name": "myDistro-configuration",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "myDistro",
   "summary": "use github to manage your dotfile ",
   "license": "GPL-3.0",

@@ -127,8 +127,8 @@ define configuration (
   if ( $init ) {
     # execute init script
     exec{ "/bin/bash ${target}/${init}":
-      user     => $user,
-      require  => Vcsrepo[$target],
+      user    => $user,
+      require => Vcsrepo[$target],
       }
   }
 
